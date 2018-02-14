@@ -1,0 +1,106 @@
+
+included:
+  - CotEditor/Sources
+  - Tests
+
+opt_in_rules:
+  - array_init
+  - attributes
+  - closure_end_indentation
+  - closure_spacing
+  - explicit_init
+  - extension_access_modifier
+  - file_header
+  - first_where
+  - implicit_return
+  - joined_default_parameter
+  - let_var_whitespace
+  - multiline_parameters
+  - nimble_operator
+  - pattern_matching_keywords
+  - private_outlet
+  - quick_discouraged_call
+  - quick_discouraged_focused_test
+  - quick_discouraged_pending_test
+  - redundant_nil_coalescing
+  - sorted_first_last
+  - vertical_parameter_alignment_on_call
+
+disabled_rules:
+  - block_based_kvo
+  - for_where
+  - force_cast
+  - nesting
+  - opening_brace
+  - trailing_comma
+  - unused_closure_parameter
+  
+  - force_try
+
+trailing_whitespace:
+  ignores_empty_lines: true
+
+attributes:
+  always_on_same_line: ["@IBAction", "@objc"]
+
+vertical_whitespace:
+  max_empty_lines: 4
+
+file_length:
+  warning: 1500
+  error: 3000
+
+line_length:
+  warning: 1000
+  error: 2000
+
+type_body_length:
+  warning: 600
+  error: 1000
+
+function_body_length:
+  warning: 150
+  error: 300
+
+cyclomatic_complexity:
+  warning: 25
+  error: 50
+
+large_tuple:
+  warning: 3
+  error: 6
+
+variable_name:
+  max_length:
+    warning: 60
+    error: 100
+  min_length:
+    warning: 1
+    error: 0
+  excluded:
+    - shiftJIS_X0213
+    - version3_0
+
+
+custom_rules:
+  comment_space:
+    name: "Space After Comment"
+    regex: '//\S'
+    match_kinds:
+      - comment
+    message: "There should be a space after a comment delimiter."
+    severity: warning
+
+  inline_comment_spaces:
+    name: "Spaces Before Inline Comment"
+    regex: '\S ?//'
+    match_kinds:
+      - comment
+    message: "There should be more than 2 spaces before an inline comment."
+    severity: warning
+
+  empty_first_line:
+    name: "Empty First Line"
+    regex: '(^[ a-zA-Z ]*(?:protocol|extension|class|struct) (?!(?:var|let))[ a-zA-Z:]*\{\n *\S+)'
+    message: "There should be an empty line after a declaration"
+    severity: warning
